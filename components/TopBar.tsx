@@ -1,19 +1,33 @@
-import React from "react";
-import { Heading } from '@chakra-ui/react'
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import LoginModal from "./modal/LoginModal";
 
-const TopBar = (props) => {
-    return (
-      <Heading
-        fontSize={{ base: "4xl", sm: "5xl", md: "6xl" }}
-        fontWeight="bold"
-        textAlign="center"
-        bgColor="#020024"
-        bgClip="text"
-        mt={4}
-      >
-        Hello this is my Kanban Challenge
-      </Heading>
-    );
+export default function TopBar() {
+  return (
+    <AppBar
+      position="static"
+      color="default"
+      elevation={0}
+      sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+    >
+      <Toolbar sx={{ flexWrap: "wrap" }}>
+        <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+          Kanban Board by Oneal
+        </Typography>
+
+        <LoginModal />
+
+        <Button
+          href="#"
+          variant="contained"
+          color="error"
+          sx={{ my: 1, mx: 1.5 }}
+        >
+          LogOut
+        </Button>
+      </Toolbar>
+    </AppBar>
+  );
 }
-
-export default TopBar;

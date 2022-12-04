@@ -1,13 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import theme from '../config/theme'
-import Layout from '../components/Layout'
-import styled from '@emotion/styled'
+import * as React from "react";
+import Container from "@mui/material/Container";
+import TopBar from "../components/TopBar";
+import Footer from "../components/footer/footer";
+import Layout from "../components/Layout";
 
 export default function Home() {
   return (
-    <Layout>
-      <h1>Hello Oneal</h1>
-    </Layout>
-  )
+    <Layout/>
+  );
 }
