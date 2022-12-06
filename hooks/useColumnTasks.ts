@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TaskModel } from "../interfaces/tasks.model";
 import { ColumnType } from "../utils/enums/columnType.enum";
+import { TagType } from "../utils/enums/tags.enum";
 import { swap } from "../utils/helper";
 import { debug } from "../utils/logging";
 import useTaskCollection from "./useTaskCollection";
@@ -44,8 +45,10 @@ function useColumnTasks(column: ColumnType) {
         id: uuidv4(),
         title: `New ${column} task`,
         column,
+        assigned: 'Oneal',
+        tag: TagType.FORM,
         insertedAt: format(),
-        description: '',
+        description: `This was a new Task that was create at ${format()}`,
         dueDate: format(),
       };
 
@@ -69,8 +72,10 @@ function useColumnTasks(column: ColumnType) {
         id: uuidv4(),
         title: `New ${column} task`,
         column,
+        assigned: 'Oneal',
+        tag: TagType.FORM,
         insertedAt: format(),
-        description: '',
+        description: `This was a new Task that was create at ${format()}`,
         dueDate: format(),
       };
 

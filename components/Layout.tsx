@@ -74,9 +74,9 @@ export default function Layout() {
                 rowSpacing={1}
                 columnSpacing={{ xs: 1, sm: 2, md: 3 }}
                 spacing={{ xs: 2, md: 3 }}
-                columns={{ xs: 3, sm: 6, md: 12 }}
+                columns={{ xs: 4, sm: 6, md: 12 }}
               >
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                   <Card>
                     <Stack
                       direction="row"
@@ -118,7 +118,7 @@ export default function Layout() {
                     </CardActions>
                   </Card>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                   <Card>
                     <Stack
                       direction="row"
@@ -159,9 +159,9 @@ export default function Layout() {
                     </CardActions>
                   </Card>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                   <Card>
-                    <CardHeader title={ColumnType.PAUSED} />
+                    <CardHeader title={ColumnType.DONE} />
                     <Divider />
                     <CardContent
                       sx={{
@@ -170,31 +170,7 @@ export default function Layout() {
                         },
                       }}
                     >
-                      <Board column={ColumnType.PAUSED} />
-                    </CardContent>
-                    <CardActions>
-                      <Typography
-                        align="center"
-                        color="text.secondary"
-                        component="p"
-                      >
-                        1 of 1
-                      </Typography>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={3}>
-                  <Card>
-                    <CardHeader title={ColumnType.COMPLETE} />
-                    <Divider />
-                    <CardContent
-                      sx={{
-                        "& .MuiTimelineItem-missingOppositeContent:before": {
-                          display: "none",
-                        },
-                      }}
-                    >
-                      <Board column={ColumnType.COMPLETE} />
+                      <Board column={ColumnType.DONE} />
                     </CardContent>
                     <CardActions>
                       <Typography

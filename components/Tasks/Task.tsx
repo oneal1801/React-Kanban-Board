@@ -19,13 +19,10 @@ import { ColumnType } from "../../utils/enums/columnType.enum";
 import React from "react";
 
 const ColumnColorScheme: Record<ColumnType, string> = {
-  Todo: "default",
+  Todo: "secondary",
   "In Progress": "primary",
-  Paused: "error",
-  Completed: "success",
+  Done: "success",
 };
-
-
 
 type TaskProps = {
   index: number;
@@ -92,13 +89,6 @@ function Task({
             {task.title}
           </Typography>
         </Link>
-        <Chip
-          variant="outlined"
-          size="small"
-          color={ColumnColorScheme[task.column]}
-          label={task.column}
-        />
-
         <Stack
           direction="column"
           spacing={1}
@@ -125,6 +115,20 @@ function Task({
             </span>
             {task.dueDate}
           </Typography>
+          <Stack direction="row" spacing={2}>
+            <Chip
+              variant="outlined"
+              size="small"
+              color={ColumnColorScheme[task.column]}
+              label={task.tag}
+            />
+            <Chip
+              variant="outlined"
+              size="small"
+              color={ColumnColorScheme[task.column]}
+              label={task.column}
+            />
+          </Stack>
         </Stack>
       </Stack>
       <CardActions sx={{ backgroundColor: "primary.main" }}>
@@ -133,9 +137,6 @@ function Task({
           alignItems="right"
           justifyContent="space-between"
         >
-          <IconButton color="default" size="small" onClick={handleDeleteClick}>
-            <ModeEditIcon />
-          </IconButton>
           <IconButton color="warning" size="small" onClick={handleDeleteClick}>
             <DeleteIcon />
           </IconButton>
