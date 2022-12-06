@@ -65,9 +65,9 @@ export default function LoginModal() {
         </DialogContent>
         <DialogActions>
           <Button variant="outlined"
-            color="error" onClick={handleClose}>Cancel</Button>
+            color="secondary" onClick={handleClose}>Cancel</Button>
           <Button variant="outlined"
-            color="success" onClick={handleClose}>Enter</Button>
+            color="primary" onClick={handleClose}>Enter</Button>
         </DialogActions>
       </Dialog>
     </div>

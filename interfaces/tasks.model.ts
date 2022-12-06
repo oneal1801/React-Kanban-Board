@@ -1,10 +1,10 @@
-import { StatusType } from "../utils/statusType.enum";
+import { ColumnType } from "../utils/enums/columnType.enum";
 
 export interface TaskModel {
-    id: string;
-    title: string;
-    priority: number;
-    createDate: Date;
-    dueDate: Date;
-    status: StatusType;
+  id: string;
+  title: string;
+  column: ColumnType;
+  description: string;
+  insertedAt: string;
+  dueDate: string;
 }
