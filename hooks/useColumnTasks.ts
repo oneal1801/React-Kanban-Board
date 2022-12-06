@@ -7,12 +7,26 @@ import { debug } from "../utils/logging";
 import useTaskCollection from "./useTaskCollection";
 
 const MAX_TASK_PER_COLUMN = 100;
+function format() {
+  let currentDate = new Date();
+  let date, month, year;
+
+  date = currentDate.getDate() + 2;
+  month = currentDate.getMonth() + 1;
+  year = currentDate.getFullYear();
+
+  date = date.toString().padStart(2, "0");
+
+  month = month.toString().padStart(2, "0");
+
+  return `${date}/${month}/${year}`;
+}
 
 function useColumnTasks(column: ColumnType) {
   const [tasks, setTasks] = useTaskCollection();
 
   const columnTasks = tasks[column];
-  let currentDay = new Date();
+  
 
   const addEmptyTask = useCallback(() => {
     debug(`Adding new empty task to ${column} column`);
@@ -30,9 +44,9 @@ function useColumnTasks(column: ColumnType) {
         id: uuidv4(),
         title: `New ${column} task`,
         column,
-        insertedAt: currentDay.getDay().toString(),
+        insertedAt: format(),
         description: '',
-        dueDate: currentDay.setDate(currentDay.getDate()+2).toString(),
+        dueDate: format(),
       };
 
       return {
@@ -55,9 +69,9 @@ function useColumnTasks(column: ColumnType) {
         id: uuidv4(),
         title: `New ${column} task`,
         column,
-        insertedAt: currentDay.getDay().toString(),
+        insertedAt: format(),
         description: '',
-        dueDate: currentDay.getDay().toString(),
+        dueDate: format(),
       };
 
       return {

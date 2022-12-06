@@ -27,20 +27,12 @@ import useColumnTasks from "../hooks/useColumnTasks";
 import SearchBox from "./Board/SearchBox";
 import useTaskCollection from "../hooks/useTaskCollection";
 
+
+
 export default function Layout() {
   const { addEmptyTask } = useColumnTasks(ColumnType.TO_DO);
   const { addInProgressTask } = useColumnTasks(ColumnType.IN_PROGRESS);
-  let countOfTodo = Object.keys(useTaskCollection()).length;
-  const count = useTaskCollection().filter((obj) => {
-    if (obj) {
-      return true;
-    }
 
-    return false;
-  }).length;
-  console.log(count);
-  console.log(countOfTodo);
-  
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles
@@ -121,7 +113,7 @@ export default function Layout() {
                         color="text.secondary"
                         component="p"
                       >
-                        1 of 1
+                        
                       </Typography>
                     </CardActions>
                   </Card>

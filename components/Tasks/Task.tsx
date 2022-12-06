@@ -1,4 +1,5 @@
 import DeleteIcon from "@mui/icons-material/Delete";
+import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import {
   Box,
   Card,
@@ -104,9 +105,19 @@ function Task({
           alignItems="flex-start"
           justifyContent="space-between"
         >
-          <Typography variant="body2" gutterBottom>
+          {/* <Typography variant="body2" gutterBottom>
             {task.description}
-          </Typography>
+          </Typography> */}
+          <AutoResizeTextarea
+            value={task.title}
+            p={0}
+            resize="none"
+            minH={50}
+            maxH={100}
+            focusBorderColor="none"
+            fontWeight="semibold"
+            onChange={handleTitleChange}
+          />
 
           <Typography fontSize={13}>
             <span>
@@ -123,6 +134,9 @@ function Task({
           justifyContent="space-between"
         >
           <IconButton color="default" size="small" onClick={handleDeleteClick}>
+            <ModeEditIcon />
+          </IconButton>
+          <IconButton color="warning" size="small" onClick={handleDeleteClick}>
             <DeleteIcon />
           </IconButton>
         </Stack>

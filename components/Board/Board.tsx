@@ -6,13 +6,8 @@ import { Box, Divider, IconButton, Stack } from "@mui/material";
 
 
 function Board({ column }: { column: ColumnType }) {
-  const {
-    tasks,
-    deleteTask,
-    dropTaskFrom,
-    swapTasks,
-    updateTask,
-  } = useColumnTasks(column);
+  const { tasks, deleteTask, dropTaskFrom, swapTasks, updateTask } =
+    useColumnTasks(column);
 
   const { dropRef, isOver } = useColumnDrop(column, dropTaskFrom);
 
