@@ -1,37 +1,39 @@
-import { DeleteIcon } from '@chakra-ui/icons';
-import {Box, IconButton, Textarea } from '@chakra-ui/react';
-import {TaskModel} from '../../interfaces/tasks.model';
+import useColumnDrop from "../../hooks/useColumnDrop";
+import useColumnTasks from "../../hooks/useColumnTasks";
+import { ColumnType } from "../../utils/enums/columnType.enum";
+import Task from "../Tasks/Task";
+import { Box, Divider, IconButton, Stack } from "@mui/material";
 
-type TaskProps = {
-    index: number;
-    task: TaskModel;
-};
 
-const Task = ({index, task} : TaskProps) => {
-    return (
-        <Box as="div" role="group" position="relative" rounded="lg" w={200} pl={3} pr={7} pt={3} pb={1} boxShadow="xl"
-             cursor="grab" bgColor="gray.300"
-        >
-            <IconButton position="absolute" top={0} right={0}
-                        zIndex={100} aria-label="delete-task"
-                        size="md" colorScheme="solid" color="gray.700"
-                        icon={<DeleteIcon/>} opacity={0} _groupHover = {{opacity:1}}
-            />
+function Board({ column }: { column: ColumnType }) {
+  const { tasks, deleteTask, dropTaskFrom, swapTasks, updateTask } =
+    useColumnTasks(column);
 
-<Textarea
-          value={task.title}
-          fontWeight="semibold"
-          cursor="inherit"
-          border="none"
-          p={0}
-          resize="none"
-          minH={70}
-          maxH={200}
-          focusBorderColor="none"
-          color="gray.700"
-        />
-        </Box>
-    );
+  const { dropRef, isOver } = useColumnDrop(column, dropTaskFrom);
+
+  const ColumnTasks = tasks.map((task, index) => (
+    <Task
+      key={task.id}
+      task={task}
+      index={index}
+      onDropHover={swapTasks}
+      onUpdate={updateTask}
+      onDelete={deleteTask}
+    />
+  ));
+
+  return (
+    <Box>
+      <Stack
+        ref={dropRef}
+        spacing={2}
+        direction="column"
+        divider={<Divider flexItem />}
+      >
+        {ColumnTasks}
+      </Stack>
+    </Box>
+  );
 }
 
-export default Task;
+export default Board;

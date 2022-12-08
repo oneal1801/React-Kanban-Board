@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Copyright from "../../config/copyright";
 
 export default function Footer() {
+  
   const footers = [
     {
       title: 'Kanban Board',
