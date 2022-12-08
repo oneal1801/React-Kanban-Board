@@ -11,7 +11,7 @@ export const AutoResizeTextarea = React.forwardRef<
     <Textarea
       as={ResizeTextarea}
       variant="filled"
-      Type="outline"
+      type="outline"
       size="sm"
       minH="unset"
       ref={ref}

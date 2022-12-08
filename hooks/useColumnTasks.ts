@@ -48,7 +48,7 @@ function useColumnTasks(column: ColumnType) {
         assigned: 'Oneal',
         tag: TagType.FORM,
         insertedAt: format(),
-        description: `This was a new Task that was create at ${format()}`,
+        description: 'This was a new Task that was create at for test 1',
         dueDate: format(),
       };
 
@@ -75,7 +75,7 @@ function useColumnTasks(column: ColumnType) {
         assigned: 'Oneal',
         tag: TagType.FORM,
         insertedAt: format(),
-        description: `This was a new Task that was create at ${format()}`,
+        description: 'This was a new Task that was create for test',
         dueDate: format(),
       };
 
