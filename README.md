@@ -33,13 +33,3 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
-https://www.youtube.com/watch?v=9MKFnOKmihE
-
-https://www.youtube.com/watch?v=5N4Pxv1BIio
-
-https://www.youtube.com/watch?v=zOOwVT1HC7g&list=PLeMqD-WcMGe71M8MVHtQaxt1Q6hwDSvPQ&index=6&t=243s
-
-https://github.com/minimal-ui-kit/material-kit-react/blob/main/src/sections/%40dashboard/products/ProductCard.js
-
-https://minimal-kit-react.vercel.app/dashboard/products
